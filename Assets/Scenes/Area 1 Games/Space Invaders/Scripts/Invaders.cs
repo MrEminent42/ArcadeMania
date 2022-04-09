@@ -7,10 +7,14 @@ public class Invaders : MonoBehaviour
 
     public int rows = 5;
     public int columns = 11;
-    public float speed = 1.0f;
+    public AnimationCurve speed;
 
     public float invaderRowSpacing = 2.0f;
     public float invaderColSpacing = 2.0f;
+
+    public int amountKilled { get; private set; }
+    public int totalInvaders => this.rows * this.columns;
+    public float percentKilled => (float)this.amountKilled / (float)this.totalInvaders;
 
     private Vector3 _direction = Vector2.right;
 
@@ -27,6 +31,8 @@ public class Invaders : MonoBehaviour
             // space the invaders col
             for (int col = 0; col < this.columns; col++) {
                 Invader invader = Instantiate(this.prefabs[row], this.transform);
+                invader.killed += InvaderKilled; // InvaderKilled() when Invader killed
+
                 Vector3 position = rowPosition;
                 position.x += col * invaderColSpacing;
                 invader.transform.localPosition = position;
@@ -36,7 +42,8 @@ public class Invaders : MonoBehaviour
 
 
     private void Update() {
-        this.transform.position += _direction * speed * Time.deltaTime;
+        this.transform.position += _direction * speed.Evaluate(this.percentKilled) * Time.deltaTime;
+        // this.transform.position += Vector2.right * 3.0f * 3;
 
         // translate viewport coordinate to world space coordinate
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
@@ -62,6 +69,10 @@ public class Invaders : MonoBehaviour
         Vector3 position = this.transform.position;
         position.y -= 1;
         this.transform.position = position;
+    }
+
+    private void InvaderKilled() {
+        amountKilled++;
     }
 
 }
