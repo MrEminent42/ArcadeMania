@@ -902,7 +902,9 @@ MonoBehaviour:
   - {fileID: 7835912670392699019, guid: 7b2aa3dfa60fb124c8c829fb640a9235, type: 3}
   rows: 5
   columns: 11
-  invaderSpacing: 2
+  speed: 1
+  invaderRowSpacing: 2
+  invaderColSpacing: 2
 --- !u!4 &2015172464
 Transform:
   m_ObjectHideFlags: 0
@@ -911,7 +913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015172462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
