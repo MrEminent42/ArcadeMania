@@ -47,13 +47,17 @@ public class MainCharacter : MonoBehaviour
                     Failure.gameObject.SetActive(true);
                 }if(recentMachine == "Platformer" && UniversalData.getTickets() >= 50){
                     SceneManager.LoadScene(recentMachine);}
+                if(Input.GetKey(KeyCode.Y)){
+                    SceneManager.LoadScene(recentMachine);
+                }
+                }
             }if(Input.GetKey(KeyCode.N)){
                 disableText();
                 recentMachine = "Nope";
                 moveToEntrance();}
 
             }
-        }
+        
     
     void OnCollisionEnter2D(Collision2D other){
         switch(other.gameObject.tag){
