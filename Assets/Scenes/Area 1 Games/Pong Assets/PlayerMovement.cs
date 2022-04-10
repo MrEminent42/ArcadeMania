@@ -6,11 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private Vector2 speed = new Vector2(50, 0.04f);
-    private int score;
 
-    public int getScore(){
-        return score;
-    }
+
 
     
     // Update is called once per frame
