@@ -10,6 +10,9 @@ TagManager:
   - Paddle
   - Enemy Goal
   - Player Goal
+  - Ground
+  - Castle
+  - Enemy
   layers:
   - Default
   - TransparentFX
