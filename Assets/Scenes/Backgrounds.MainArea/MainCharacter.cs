@@ -10,6 +10,8 @@ public class MainCharacter : MonoBehaviour
     public Text SpaceT;
     public Text SnakeT;
     public Text PlatT;
+    public Text Failure;
+
     public GameObject WordBubble;
 
 
@@ -40,7 +42,11 @@ public class MainCharacter : MonoBehaviour
 
         if(recentMachine != "Nope"){
             if(Input.GetKey(KeyCode.Y) || recentMachine == "Talking to Owner"){
-                SceneManager.LoadScene(recentMachine);
+                if(recentMachine == "Platformer" && UniversalData.getTickets() < 120){
+                    PlatT.gameObject.SetActive(false);
+                    Failure.gameObject.SetActive(true);
+                }if(recentMachine == "Platformer" && UniversalData.getTickets() >= 120){
+                    SceneManager.LoadScene(recentMachine);}
             }if(Input.GetKey(KeyCode.N)){
                 disableText();
                 recentMachine = "Nope";
@@ -95,6 +101,7 @@ public class MainCharacter : MonoBehaviour
         SpaceT.gameObject.SetActive(false);
         SnakeT.gameObject.SetActive(false);
         PlatT.gameObject.SetActive(false);
+        Failure.gameObject.SetActive(false);
         WordBubble.gameObject.SetActive(false);
 
     }
