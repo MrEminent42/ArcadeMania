@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,14 +10,24 @@ public class Player : MonoBehaviour
 
     private bool _activeLaser = false;
 
+    private int health = 5;
+
     private void Update() {
         // GetKey: return true every frame that key is pressed
         // GetKeyDown: only returns true the first frame key is pressed until release
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-            this.transform.position += Vector3.left * this.speed * Time.deltaTime;
+            Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero); // (0,0,0)
+            if (!(this.transform.position.x <= leftEdge.x + 1.5)) {
+                this.transform.position += Vector3.left * this.speed * Time.deltaTime;
+            }
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-            this.transform.position += Vector3.right * this.speed * Time.deltaTime;
+            
+            Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right); // (1,0,0)
+            if (!(this.transform.position.x >= rightEdge.x - 1.5)) {
+                this.transform.position += Vector3.right * this.speed * Time.deltaTime;
+            }
         }
+
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
@@ -33,5 +44,24 @@ public class Player : MonoBehaviour
 
     private void LaserDestroyed() {
         this._activeLaser = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        // check that colliding object is laser
+        if (other.gameObject.layer == LayerMask.NameToLayer("Missile")) {
+            this.LowerHealth();
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    private void LowerHealth() {
+        health--;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }
