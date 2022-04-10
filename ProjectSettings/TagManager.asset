@@ -20,6 +20,7 @@ TagManager:
   - Enemy
   - Walls
   - WordBubble
+  - Barrier
   layers:
   - Default
   - TransparentFX
