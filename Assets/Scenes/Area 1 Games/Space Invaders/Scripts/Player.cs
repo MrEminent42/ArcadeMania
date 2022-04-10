@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class Player : MonoBehaviour
         // check that colliding object is laser
         if (other.gameObject.layer == LayerMask.NameToLayer("Missile")) {
             this.LowerHealth();
+        }
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
