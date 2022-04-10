@@ -64,6 +64,8 @@ public class PlayerMovePlatformer : MonoBehaviour
             Start();
         } else if (other.gameObject.tag == "Enemy"){
             Start();
+        } else if (other.gameObject.tag == "Lava"){
+            Start();
         }
     }
          
