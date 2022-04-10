@@ -13,7 +13,7 @@ public class MainCharacter : MonoBehaviour
 
 
     
-
+    private string recentMachine;
     private Vector2 speed = new Vector2(0.02f,0.02f);
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,7 @@ public class MainCharacter : MonoBehaviour
     SpaceT.gameObject.SetActive(false);
     SnakeT.gameObject.SetActive(false);
     PlatT.gameObject.SetActive(false);
+    recentMachine = "Nope";
     }
 
     // Update is called once per frame
@@ -36,45 +37,64 @@ public class MainCharacter : MonoBehaviour
         if((vertical<8 && vertical>-8) && (horizontal<4 && horizontal>-4)){
             transform.Translate(movement);
         }
-    }
+
+        // Debug.Log(recentMachine);
+
+        if(recentMachine != "Nope"){
+            if(Input.GetKey(KeyCode.Y)){
+                SceneManager.LoadScene(recentMachine);
+            }if(Input.GetKey(KeyCode.N)){
+                PongT.gameObject.SetActive(false);
+                SpaceT.gameObject.SetActive(false);
+                SnakeT.gameObject.SetActive(false);
+                PlatT.gameObject.SetActive(false);
+                recentMachine = "Nope";
+                moveToEntrance();}
+
+            }
+        }
+    
     void OnCollisionEnter2D(Collision2D other){
         switch(other.gameObject.tag){
             case "Pong":
-                PongT.enabled = true;
-                YesorNo("Pong");
-                PongT.enabled = false;
+                PongT.gameObject.SetActive(true);
+                recentMachine = "Pong";
                 break;
             case "Space":
-                SpaceT.enabled = true;
-                YesorNo("Space Invaders");
-                SpaceT.enabled = false;
+                SpaceT.gameObject.SetActive(true);
+                recentMachine = "Space Invaders";
                 break;
             case "Snake":
-                SnakeT.enabled = true;
-                YesorNo("Snake");
-                SnakeT.enabled = false;
+                Debug.Log("Yolo");
+                SnakeT.gameObject.SetActive(true);
+                recentMachine = "Snake";
                 break;
             case "Platform":
-                PlatT.enabled = true;
-                YesorNo("Platformer");
-                PlatT.enabled = false;
+                PlatT.gameObject.SetActive(true);
+                recentMachine = "Platformer";
                 break;
             case "OldGuy":
                 moveToEntrance();
                 break;
         }
+        // PongT.gameObject.SetActive(false);
+        // SpaceT.gameObject.SetActive(false);
+        // SnakeT.gameObject.SetActive(false);
+        // PlatT.gameObject.SetActive(false);
+
     }
     void moveToEntrance(){
         transform.Translate(new Vector3(0,-3,0));
     }
 
-    void YesorNo(string filename){
-            if(Input.GetKeyDown(KeyCode.Y)){
-                   SceneManager.LoadScene(filename);
-            }if(Input.GetKeyDown(KeyCode.N)){
-                moveToEntrance();
-            }
-    }
+    // void YesorNo(string filename){
+    //     while(!(Input.GetKey(KeyCode.Y) || Input.GetKey(KeyCode.N))){
+    //         }
+    //         if(Input.GetKey(KeyCode.Y)){
+    //                SceneManager.LoadScene(filename);
+    //         }if(Input.GetKey(KeyCode.N)){
+    //             moveToEntrance();}
+    // }
     
     
 }
