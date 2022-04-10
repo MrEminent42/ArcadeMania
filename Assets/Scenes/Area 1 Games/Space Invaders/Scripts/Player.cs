@@ -17,13 +17,13 @@ public class Player : MonoBehaviour
         // GetKeyDown: only returns true the first frame key is pressed until release
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero); // (0,0,0)
-            if (!(this.transform.position.x <= leftEdge.x + 1.5)) {
+            if (!(this.transform.position.x <= leftEdge.x/2 + 1.5)) {
                 this.transform.position += Vector3.left * this.speed * Time.deltaTime;
             }
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             
             Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right); // (1,0,0)
-            if (!(this.transform.position.x >= rightEdge.x - 1.5)) {
+            if (!(this.transform.position.x >= rightEdge.x/2 - 1.5)) {
                 this.transform.position += Vector3.right * this.speed * Time.deltaTime;
             }
         }
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
         }
+        
     }
 
     private void Shoot() {
@@ -54,12 +55,20 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
             // reset game 
             // TODO - switch to game over scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            endGame();
         }
     }
 
     private void LowerHealth() {
         health--;
+        if (health <= 0) {
+            endGame();
+        }
+    }
+
+    public void endGame() {
+        UniversalData.logNumTicketsEarnedLastMinigame(GameObject.Find("Invaders").GetComponent<Invaders>().amountKilled);
+        SceneManager.LoadScene("EndGameScene");
     }
 
     public int getHealth() {

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Snake
   - Food
+  - Pong
+  - Space
+  - Snake
+  - OldGuy
+  - Platform
   - Ball
   - Paddle
   - Enemy Goal
@@ -13,6 +18,8 @@ TagManager:
   - Ground
   - Castle
   - Enemy
+  - Walls
+  - WordBubble
   layers:
   - Default
   - TransparentFX
@@ -52,4 +59,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bubble
+    uniqueID: 2761198501
     locked: 0
