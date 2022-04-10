@@ -15,6 +15,7 @@ TagManager:
   - Paddle
   - Enemy Goal
   - Player Goal
+  - Wall
   - Ground
   - Castle
   - Enemy
