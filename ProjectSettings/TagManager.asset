@@ -15,8 +15,13 @@ TagManager:
   - Paddle
   - Enemy Goal
   - Player Goal
+  - Ground
+  - Castle
+  - Enemy
   - Walls
   - WordBubble
+  - Barrier
+  - Lava
   layers:
   - Default
   - TransparentFX
