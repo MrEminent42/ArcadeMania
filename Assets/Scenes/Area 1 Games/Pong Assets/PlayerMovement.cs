@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 speed = new Vector2(50, 0.04f);
 
-
-
     
     // Update is called once per frame
     void Update()

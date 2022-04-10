@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Ball : MonoBehaviour
     private float speed = 3;
     private Rigidbody2D rb;
     private int score = 0;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,11 +40,16 @@ public class Ball : MonoBehaviour
 
         }
     }
-    
+    public void endGame() {
+        UniversalData.logNumTicketsEarnedLastMinigame(score);
+        SceneManager.LoadScene("EndGameScene");
+    }
     void Lose(){
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
         UniversalData.logNumTicketsEarnedLastMinigame(score);
+        endGame();
     }
+
 
 }
