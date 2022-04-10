@@ -6,6 +6,8 @@ public class UniversalData : MonoBehaviour
 {
     private static int tickets = 0;
 
+    private static int ticketsEarnedLastMinigame = 0;
+
     public static void addTickets(int tix) {
         tickets += tix;
     }
@@ -17,4 +19,13 @@ public class UniversalData : MonoBehaviour
     public static int getTickets() {
         return tickets;
     }
+
+    public static void logNumTicketsEarnedLastMinigame(int tix) {
+        ticketsEarnedLastMinigame = tix;
+    }
+
+    public static int getNumTicketsEarnedLastMinigame() {
+        return ticketsEarnedLastMinigame;
+    }
+
 }
