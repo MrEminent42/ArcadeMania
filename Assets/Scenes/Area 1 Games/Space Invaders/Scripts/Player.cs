@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     private bool _activeLaser = false;
 
+    private int health = 5;
+
     private void Update() {
         // GetKey: return true every frame that key is pressed
         // GetKeyDown: only returns true the first frame key is pressed until release
@@ -41,5 +43,20 @@ public class Player : MonoBehaviour
 
     private void LaserDestroyed() {
         this._activeLaser = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        // check that colliding object is laser
+        if (other.gameObject.layer == LayerMask.NameToLayer("Missile")) {
+            this.LowerHealth();
+        }
+    }
+
+    private void LowerHealth() {
+        health--;
+    }
+
+    public int getHealth() {
+        return health;
     }
 }
