@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Snake
   - Food
+  - Ball
+  - Paddle
+  - Enemy Goal
+  - Player Goal
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Invader
+  - Laser
+  - Missile
   - 
   - 
   - 
