@@ -17,4 +17,11 @@ public class Food : MonoBehaviour
 
         this.transform.position = new Vector3(x,y,0.0f);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Snake"){
+            Position();
+        }
+    }
 }
