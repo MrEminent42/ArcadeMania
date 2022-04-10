@@ -6,6 +6,16 @@ TagManager:
   tags:
   - Snake
   - Food
+<<<<<<< Updated upstream
+=======
+  - Ball
+  - Paddle
+  - Enemy Goal
+  - Player Goal
+  - Wall
+  - Ground
+  - Castle
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
