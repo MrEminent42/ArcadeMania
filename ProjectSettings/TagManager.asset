@@ -21,6 +21,7 @@ TagManager:
   - Walls
   - WordBubble
   - Barrier
+  - Lava
   layers:
   - Default
   - TransparentFX

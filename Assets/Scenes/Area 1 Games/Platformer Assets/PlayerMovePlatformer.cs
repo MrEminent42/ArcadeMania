@@ -7,9 +7,13 @@
 // using System;
 // using System.ComponentModel.DataAnnotations.Schema;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovePlatformer : MonoBehaviour
 {
+    public Sprite MC;
+    public Sprite MCJump;
+    public SpriteRenderer render;
     private Vector2 speed = new Vector2(0.02f,0.02f);
     private Rigidbody2D rb2D;
     private int jumps;
@@ -35,6 +39,7 @@ public class PlayerMovePlatformer : MonoBehaviour
         transform.Translate(movement);
 
         if (Input.GetKeyDown(KeyCode.Space) && jumps == 0){
+            render.sprite = MCJump;
             float jumpVel = 5f;
             rb2D.velocity = Vector2.up * jumpVel;
             jumps += 1;
@@ -58,10 +63,11 @@ public class PlayerMovePlatformer : MonoBehaviour
     {
 
         if (other.gameObject.tag == "Ground"){
+            render.sprite = MC;
             jumps = 0;
         } else if (other.gameObject.tag == "Castle"){
             Debug.Log("Massive Dubs");
-            Start();
+            SceneManager.LoadScene("You Win");
         } else if (other.gameObject.tag == "Enemy"){
             Start();
         } else if (other.gameObject.tag == "Lava"){

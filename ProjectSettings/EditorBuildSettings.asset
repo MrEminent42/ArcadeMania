@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Character Talking/Talking to Owner.unity
     guid: 0a72b608a3585fa43aa864649c9efaa7
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene/You Win.unity
+    guid: eda7ed1821d2f1146a86098f436405e1
   m_configObjects: {}
