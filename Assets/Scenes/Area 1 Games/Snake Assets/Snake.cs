@@ -108,11 +108,11 @@ public class Snake : MonoBehaviour
     void resetGame(){
         float score = Mathf.Round((body.Count - 1)/2);
         int scoreReturned = (int) score;
-        for (int i = 1; i < body.Count; i ++ ){
-            Destroy(body[i].gameObject);
-         }
-        body.Clear();
-        body.Add(this.transform);
+        // for (int i = 1; i < body.Count; i ++ ){
+        //     Destroy(body[i].gameObject);
+        //  }
+        // body.Clear();
+        // body.Add(this.transform);
         UniversalData.logNumTicketsEarnedLastMinigame(scoreReturned);
         SceneManager.LoadScene("EndGameScene");
     }
@@ -120,12 +120,11 @@ public class Snake : MonoBehaviour
     {
         UnityEngine.Debug.Log("Collide " + this.name + " with " + other.name);
         if (other.tag == "Food"){
-            // for (int i = 0; i < 5; i++){
                 Grow();
             // }
         } else if (other.tag == "Wall") {
             // UnityEngine.Debug.Log("Collide indented " + this.name + " with " + other.name);
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
             
             //UnityEngine.Debug.Log(scoreReturned);
             
