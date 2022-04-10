@@ -14,7 +14,7 @@ public class PlayerMovePlatformer : MonoBehaviour
     public Sprite MC;
     public Sprite MCJump;
     public SpriteRenderer render;
-    private Vector2 speed = new Vector2(0.02f,0.02f);
+    private Vector2 speed = new Vector2(0.08f,0.08f);
     private Rigidbody2D rb2D;
     private int jumps;
     private void Awake(){
