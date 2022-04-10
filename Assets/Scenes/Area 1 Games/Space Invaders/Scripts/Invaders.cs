@@ -22,7 +22,7 @@ public class Invaders : MonoBehaviour
     public int totalInvaders => this.rows * this.columns;
     public float percentKilled => (float)this.amountKilled / (float)this.totalInvaders;
 
-    private Vector3 _direction = Vector2.right;
+    // Vector3 _direction = Vector2.right;
 
     private void Awake() {
         // info for centering
@@ -52,7 +52,7 @@ public class Invaders : MonoBehaviour
 
 
     private void Update() {
-        this.transform.position += _direction * speed.Evaluate(this.percentKilled) * Time.deltaTime;
+        // this.transform.position += _direction * speed.Evaluate(this.percentKilled) * Time.deltaTime;
 
         // translate viewport coordinate to world space coordinate
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero); // (0,0,0)
@@ -60,15 +60,15 @@ public class Invaders : MonoBehaviour
 
 
         // loop through every child object that is parented by this Invader base
-        foreach (Transform invader in this.transform) {
-            if (!invader.gameObject.activeInHierarchy) continue;
+        // foreach (Transform invader in this.transform) {
+        //     // if (!invader.gameObject.activeInHierarchy) continue;
 
-            if (_direction == Vector3.right && invader.position.x >= rightEdge.x - 1) {
-                MoveDown();
-            } else if (_direction == Vector3.left && invader.position.x <= leftEdge.x + 1) {
-                MoveDown();
-            }
-        }
+        //     if (_direction == Vector3.right && invader.position.x >= rightEdge.x/2 - 1) {
+        //         MoveDown();
+        //     } else if (_direction == Vector3.left && invader.position.x <= leftEdge.x/2 + 1) {
+        //         MoveDown();
+        //     }
+        // }
     }
 
     private void MaybeShootLaser() {
@@ -84,20 +84,20 @@ public class Invaders : MonoBehaviour
         }
     }
 
-    private void MoveDown() {
+    // private void MoveDown() {
 
-        _direction.x *= -1.0f;
+    //     _direction.x *= -1.0f;
 
-        Vector3 position = this.transform.position;
-        position.y -= 1;
-        this.transform.position = position;
-    }
+    //     Vector3 position = this.transform.position;
+    //     position.y -= 1;
+    //     this.transform.position = position;
+    // }
 
     private void InvaderKilled() {
         amountKilled++;
 
         if (this.amountKilled >= this.totalInvaders) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameObject.Find("Player").GetComponent<Player>().endGame();
         }
 
     }

@@ -22,6 +22,7 @@ public class UniversalData : MonoBehaviour
 
     public static void logNumTicketsEarnedLastMinigame(int tix) {
         ticketsEarnedLastMinigame = tix;
+        tickets += tix;
     }
 
     public static int getNumTicketsEarnedLastMinigame() {
