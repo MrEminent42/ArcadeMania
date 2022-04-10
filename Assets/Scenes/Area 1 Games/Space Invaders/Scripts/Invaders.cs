@@ -63,9 +63,9 @@ public class Invaders : MonoBehaviour
         foreach (Transform invader in this.transform) {
             if (!invader.gameObject.activeInHierarchy) continue;
 
-            if (_direction == Vector3.right && invader.position.x >= rightEdge.x - 1) {
+            if (_direction == Vector3.right && invader.position.x >= rightEdge.x/2 - 1) {
                 MoveDown();
-            } else if (_direction == Vector3.left && invader.position.x <= leftEdge.x + 1) {
+            } else if (_direction == Vector3.left && invader.position.x <= leftEdge.x/2 + 1) {
                 MoveDown();
             }
         }
