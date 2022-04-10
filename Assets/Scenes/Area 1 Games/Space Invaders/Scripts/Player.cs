@@ -54,7 +54,8 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
             // reset game 
             // TODO - switch to game over scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            UniversalData.logNumTicketsEarnedLastMinigame(50);
+            SceneManager.LoadScene("EndGameScene");
         }
     }
 
