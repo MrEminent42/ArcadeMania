@@ -97,9 +97,7 @@ public class Invaders : MonoBehaviour
         amountKilled++;
 
         if (this.amountKilled >= this.totalInvaders) {
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            UniversalData.logNumTicketsEarnedLastMinigame(50);
-            SceneManager.LoadScene("EndGameScene");
+            GameObject.Find("Player").GetComponent<Player>().endGame();
         }
 
     }

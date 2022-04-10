@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
         }
+        
     }
 
     private void Shoot() {
@@ -54,13 +55,20 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
             // reset game 
             // TODO - switch to game over scene
-            UniversalData.logNumTicketsEarnedLastMinigame(50);
-            SceneManager.LoadScene("EndGameScene");
+            endGame();
         }
     }
 
     private void LowerHealth() {
         health--;
+        if (health <= 0) {
+            endGame();
+        }
+    }
+
+    public void endGame() {
+        UniversalData.logNumTicketsEarnedLastMinigame(GameObject.Find("Invaders").GetComponent<Invaders>().amountKilled);
+        SceneManager.LoadScene("EndGameScene");
     }
 
     public int getHealth() {
