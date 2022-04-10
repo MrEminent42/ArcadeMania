@@ -4,10 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Pong
+  - Space
+  - Snake
+  - OldGuy
+  - Platform
   - Ball
   - Paddle
   - Enemy Goal
   - Player Goal
+  - Walls
+  - WordBubble
   layers:
   - Default
   - TransparentFX
@@ -47,4 +54,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bubble
+    uniqueID: 2761198501
     locked: 0
