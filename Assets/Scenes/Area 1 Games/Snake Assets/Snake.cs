@@ -1,8 +1,11 @@
+//using System;
+using System.Threading;
 using System.Globalization;
 // using System.Reflection.PortableExecutable;
 using System.Diagnostics;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
@@ -36,7 +39,6 @@ public class Snake : MonoBehaviour
         body = new List<Transform>();
         body.Add(this.transform);
     }
-
 
     void Position()
     {
@@ -104,12 +106,15 @@ public class Snake : MonoBehaviour
     }
 
     void resetGame(){
+        float score = Mathf.Round((body.Count - 1)/2);
+        int scoreReturned = (int) score;
         for (int i = 1; i < body.Count; i ++ ){
             Destroy(body[i].gameObject);
          }
         body.Clear();
         body.Add(this.transform);
-        Start();
+        UniversalData.logNumTicketsEarnedLastMinigame(scoreReturned);
+        SceneManager.LoadScene("EndGameScene");
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -119,7 +124,11 @@ public class Snake : MonoBehaviour
                 Grow();
             // }
         } else if (other.tag == "Wall") {
-            UnityEngine.Debug.Log("Collide indented " + this.name + " with " + other.name);
+            // UnityEngine.Debug.Log("Collide indented " + this.name + " with " + other.name);
+            Time.timeScale = 0;
+            
+            //UnityEngine.Debug.Log(scoreReturned);
+            
             resetGame();
         }
     }

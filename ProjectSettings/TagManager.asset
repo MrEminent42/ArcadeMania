@@ -6,8 +6,11 @@ TagManager:
   tags:
   - Snake
   - Food
-<<<<<<< Updated upstream
-=======
+  - Pong
+  - Space
+  - Snake
+  - OldGuy
+  - Platform
   - Ball
   - Paddle
   - Enemy Goal
@@ -15,7 +18,11 @@ TagManager:
   - Wall
   - Ground
   - Castle
->>>>>>> Stashed changes
+  - Enemy
+  - Walls
+  - WordBubble
+  - Barrier
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -23,10 +30,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Invader
+  - Laser
+  - Missile
   - 
   - 
   - 
@@ -55,4 +62,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bubble
+    uniqueID: 2761198501
     locked: 0

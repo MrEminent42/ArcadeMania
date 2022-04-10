@@ -8,4 +8,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Backgrounds.MainArea/Arcade Area 2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Backgrounds.MainArea/Arcade Area 1.unity
+    guid: cb85107525d9de14bb07b07c4a8d27af
+  - enabled: 1
+    path: Assets/Scenes/Area 1 Games/Snake.unity
+    guid: fad10841a6759f945844230336c5e5b0
+  - enabled: 1
+    path: Assets/Scenes/Area 1 Games/Pong.unity
+    guid: f3eb15cc9491a9b4ab1eda00e85b7365
+  - enabled: 1
+    path: Assets/Scenes/Area 1 Games/Platformer.unity
+    guid: 10e3372b9c4e5804898ad637d25f315a
+  - enabled: 1
+    path: Assets/Scenes/Area 1 Games/Space Invaders/Space Invaders.unity
+    guid: 40d856e1070ba0449b52a6180fd8f8a2
+  - enabled: 1
+    path: Assets/Scenes/Backgrounds.MainArea/Arcade Area 1.unity
+    guid: cb85107525d9de14bb07b07c4a8d27af
+  - enabled: 1
+    path: Assets/Scenes/Character Talking/Talking to Owner.unity
+    guid: 0a72b608a3585fa43aa864649c9efaa7
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene/You Win.unity
+    guid: eda7ed1821d2f1146a86098f436405e1
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene/EndGameScene.unity
+    guid: b8a0fcf1b7f92b7479b4eba812b36c47
   m_configObjects: {}

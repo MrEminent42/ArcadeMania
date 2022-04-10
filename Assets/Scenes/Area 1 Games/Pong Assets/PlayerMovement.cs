@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    private Vector2 speed = new Vector2(50, 0.04f);
+
     
-    public Vector2 speed = new Vector2(50, 50);
-
-
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +21,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    // void OnCollisionEnter2D(Collision2D coll){
+    //     if(coll.gameObject.tag == "Ball"){
+    //         score++;
+    //     }
+    // }
 }
+

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 533584872820964482}
   - component: {fileID: 533584872820964483}
   - component: {fileID: -2396399760815081064}
-  m_Layer: 0
+  - component: {fileID: 5450567863685762126}
+  m_Layer: 7
   m_Name: InvaderBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,3 +125,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationSprites: []
   animationTime: 1
+--- !u!50 &5450567863685762126
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533584872820964484}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
