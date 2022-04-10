@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
     // Start is called before the first frame update
     private float speed = 3;
     private Rigidbody2D rb;
+    private int score = 0;
 
     void Start()
     {
@@ -17,7 +19,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void Launch(){
         float x = Random.Range(0,2) == 0 ? -1 : 1;
@@ -28,16 +30,24 @@ public class Ball : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Paddle" || other.gameObject.tag == "Player"){
             rb.velocity *= 1.2f;
+            if(other.gameObject.tag == "Player"){
+                score++;
+            }
         }
         if(other.gameObject.tag == "Enemy Goal"){
             Lose();
 
         }
     }
-    
+    public void endGame() {
+        UniversalData.logNumTicketsEarnedLastMinigame(score);
+        SceneManager.LoadScene("EndGameScene");
+    }
     void Lose(){
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
+        endGame();
     }
+
 
 }
