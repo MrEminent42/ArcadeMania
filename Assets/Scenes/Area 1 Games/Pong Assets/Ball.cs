@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(score);
+        // Debug.Log(score);
     }
     void Launch(){
         float x = Random.Range(0,2) == 0 ? -1 : 1;
@@ -42,6 +42,7 @@ public class Ball : MonoBehaviour
     void Lose(){
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
+        UniversalData.logNumTicketsEarnedLastMinigame(score);
     }
 
 }
