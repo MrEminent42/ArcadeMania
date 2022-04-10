@@ -47,7 +47,7 @@ public class MainCharacter : MonoBehaviour
                     Failure.gameObject.SetActive(true);
                 }if(recentMachine == "Platformer" && UniversalData.getTickets() >= 50){
                     SceneManager.LoadScene(recentMachine);}
-                if(Input.GetKey(KeyCode.Y)){
+                if((Input.GetKey(KeyCode.Y) && recentMachine != "Platformer") || recentMachine == "Talking to Owner"){
                     SceneManager.LoadScene(recentMachine);
                 }
                 }
