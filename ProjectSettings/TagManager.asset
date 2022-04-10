@@ -9,6 +9,10 @@ TagManager:
   - Snake
   - OldGuy
   - Platform
+  - Ball
+  - Paddle
+  - Enemy Goal
+  - Player Goal
   layers:
   - Default
   - TransparentFX
