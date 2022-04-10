@@ -14,3 +14,7 @@ Some accomplishments we were proud of were getting the tickets to be obtainable 
 We learned a ton about how Unity and C# work as well as the depth of bugs that game development will bring.
 ## What's next for ArcaneMania
 If we were to continue this project, we had multiple ideas for a second hub area that would be unlocked after the final game, unlocking more activities including another secret room and final boss battle.
+## Thanks to
+Special thanks to developer Zigurous. The Space Invader game is heavily based on his tutorial and code available at https://www.youtube.com/watch?v=qWDQgmdUzWI.
+## Try it out
+On Windows, download the folder Builds/Windows and then run the .exe inside the folder.
