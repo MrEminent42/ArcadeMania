@@ -75,3 +75,6 @@ crashlytics-build.properties
 
 # mac
 .DS_Store
+
+# premiere
+/PremiereProject/
