@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    public BoxCollider2D foodSpawnArea;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Position();
     }
-
-    // Update is called once per frame
-    void Update()
+    void Position()
     {
-        
+        Bounds bounds = this.foodSpawnArea.bounds;
+
+        float x = Mathf.Round(Random.Range(bounds.min.x, bounds.max.x));
+        float y = Mathf.Round(Random.Range(bounds.min.y, bounds.max.y));
+
+        this.transform.position = new Vector3(x,y,0.0f);
     }
 }

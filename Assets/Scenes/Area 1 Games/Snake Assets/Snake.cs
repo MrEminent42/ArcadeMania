@@ -4,6 +4,38 @@ public class Snake : MonoBehaviour
 {
     private Vector2 directionMoved;
 
+    public BoxCollider2D foodSpawnArea;
+    void Start()
+    {
+        Position();
+        int startingDirection = Random.Range(1,4);
+        switch (startingDirection){
+            case 1:
+            directionMoved = Vector2.up;
+            break;
+
+            case 2:
+            directionMoved = Vector2.right;
+            break;
+
+            case 3:
+            directionMoved = Vector2.down;
+            break;
+
+            case 4:
+            directionMoved = Vector2.left;
+            break;
+        }
+    }
+    void Position()
+    {
+        Bounds bounds = this.foodSpawnArea.bounds;
+
+        float x = Mathf.Round(Random.Range(bounds.min.x, bounds.max.x));
+        float y = Mathf.Round(Random.Range(bounds.min.y, bounds.max.y));
+
+        this.transform.position = new Vector3(x,y,0.0f);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
