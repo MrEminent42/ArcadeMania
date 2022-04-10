@@ -1,3 +1,4 @@
+//using System;
 using System.Threading;
 using System.Globalization;
 // using System.Reflection.PortableExecutable;
@@ -112,21 +113,20 @@ public class Snake : MonoBehaviour
         body.Add(this.transform);
         Start();
     }
-    private int OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         UnityEngine.Debug.Log("Collide " + this.name + " with " + other.name);
         if (other.tag == "Food"){
             // for (int i = 0; i < 5; i++){
                 Grow();
-                return null;
             // }
         } else if (other.tag == "Wall") {
             // UnityEngine.Debug.Log("Collide indented " + this.name + " with " + other.name);
             Time.timeScale = 0;
             float score = Mathf.Round((body.Count - 1)/2);
             int scoreReturned = (int) score;
-            return scoreReturned;
-            UnityEngine.Debug.Log(score);
+            //UnityEngine.Debug.Log(scoreReturned);
+            UniversalData.logNumTicketsEarnedLastMinigame(scoreReturned);
             //resetGame();
         }
     }
