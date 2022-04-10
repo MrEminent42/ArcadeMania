@@ -42,10 +42,10 @@ public class MainCharacter : MonoBehaviour
 
         if(recentMachine != "Nope"){
             if(Input.GetKey(KeyCode.Y) || recentMachine == "Talking to Owner"){
-                if(recentMachine == "Platformer" && UniversalData.getTickets() < 120){
+                if(recentMachine == "Platformer" && UniversalData.getTickets() < 50){
                     PlatT.gameObject.SetActive(false);
                     Failure.gameObject.SetActive(true);
-                }if(recentMachine == "Platformer" && UniversalData.getTickets() >= 120){
+                }if(recentMachine == "Platformer" && UniversalData.getTickets() >= 50){
                     SceneManager.LoadScene(recentMachine);}
             }if(Input.GetKey(KeyCode.N)){
                 disableText();

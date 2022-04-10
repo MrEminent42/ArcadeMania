@@ -429,6 +429,7 @@ MonoBehaviour:
   SpaceT: {fileID: 1361922698}
   SnakeT: {fileID: 557400748}
   PlatT: {fileID: 771401390}
+  Failure: {fileID: 952996913}
   WordBubble: {fileID: 225316133}
 --- !u!1 &557400746
 GameObject:
@@ -464,7 +465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: 224}
+  m_AnchoredPosition: {x: 202.40002, y: 220.25}
   m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557400748
@@ -636,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: 223}
+  m_AnchoredPosition: {x: 202.40002, y: 220.25}
   m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771401390
@@ -781,7 +782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211.8, y: 223.5}
+  m_AnchoredPosition: {x: 202.40002, y: 220.25}
   m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927332872
@@ -860,7 +861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212.9, y: 220.25002}
+  m_AnchoredPosition: {x: 208, y: 224}
   m_SizeDelta: {x: 187.8, y: 37.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952996913
@@ -896,7 +897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sorry Champ, you need at least 120 tickets to play that game, better luck
+  m_Text: Sorry Champ, you need at least 60 tickets to play that game, better luck
     next time!
 --- !u!222 &952996914
 CanvasRenderer:
@@ -1022,7 +1023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215, y: 223}
+  m_AnchoredPosition: {x: 206.89996, y: 220.25}
   m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361922698
