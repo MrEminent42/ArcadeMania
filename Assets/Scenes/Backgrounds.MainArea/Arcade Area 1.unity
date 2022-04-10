@@ -402,6 +402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a102347deac78645810c2a7e5e64b1d, type: 3}
+--- !u!1 &225316133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930012256303717192, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+  m_PrefabInstance: {fileID: 4704450659258499647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &342025667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4860067904433895288, guid: 1e16ed5728344fb478f4e168178ea09c, type: 3}
@@ -423,6 +428,7 @@ MonoBehaviour:
   SpaceT: {fileID: 1361922698}
   SnakeT: {fileID: 557400748}
   PlatT: {fileID: 771401390}
+  WordBubble: {fileID: 225316133}
 --- !u!1 &557400746
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,8 +463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 195, y: 33}
+  m_AnchoredPosition: {x: 214, y: 224}
+  m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557400748
 MonoBehaviour:
@@ -473,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.84232986, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -481,11 +487,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 04cd0a1f96bb7f04383ccf9b46bfe2c6, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -493,7 +499,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Would you like to play Snake? y for yes, n for no.
+  m_Text: Would you like to play Snake? Press y for yes
 --- !u!222 &557400749
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -629,8 +635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 195, y: 33}
+  m_AnchoredPosition: {x: 214, y: 223}
+  m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771401390
 MonoBehaviour:
@@ -645,7 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9674624, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -653,11 +659,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 04cd0a1f96bb7f04383ccf9b46bfe2c6, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -665,7 +671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Would you like to play a Platformer? y for yes, n for no.
+  m_Text: Would you like to play a Platformer? Press y for yes
 --- !u!222 &771401391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -774,8 +780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 195, y: 33}
+  m_AnchoredPosition: {x: 211.8, y: 223.5}
+  m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927332872
 MonoBehaviour:
@@ -790,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.84751457, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -798,11 +804,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 04cd0a1f96bb7f04383ccf9b46bfe2c6, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -810,7 +816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Would you like to play pong? y for yes, n for no.
+  m_Text: Would you like to play Pong? Press y for yes
 --- !u!222 &927332873
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -935,8 +941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 195, y: 33}
+  m_AnchoredPosition: {x: 215, y: 223}
+  m_SizeDelta: {x: 190, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361922698
 MonoBehaviour:
@@ -951,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9003632, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -959,11 +965,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 04cd0a1f96bb7f04383ccf9b46bfe2c6, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -971,7 +977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Would you like to play space invaders? y for yes, n for no.
+  m_Text: Would you like to play Space Invaders? Press y for yes
 --- !u!222 &1361922699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1656,7 +1662,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08537769, y: -0.9178091}
+  m_Offset: {x: -0.073168755, y: -0.82013917}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1667,7 +1673,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.2934113, y: 3.4332612}
+  m_Size: {x: 5.7806444, y: 3.2379212}
   m_EdgeRadius: 0
 --- !u!4 &2041719134
 Transform:
@@ -1946,3 +1952,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e16ed5728344fb478f4e168178ea09c, type: 3}
+--- !u!1001 &4704450659258499647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 930012256303717192, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_Name
+      value: WordBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987926937685276581, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732640134037090778, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732640134037090778, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732640134037090778, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1533768795
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 664f7e3421865e74dbf7ee698d150dea, type: 3}

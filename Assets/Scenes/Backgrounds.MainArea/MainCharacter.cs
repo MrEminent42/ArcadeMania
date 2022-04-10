@@ -10,6 +10,7 @@ public class MainCharacter : MonoBehaviour
     public Text SpaceT;
     public Text SnakeT;
     public Text PlatT;
+    public GameObject WordBubble;
 
 
     
@@ -18,10 +19,7 @@ public class MainCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    PongT.gameObject.SetActive(false);
-    SpaceT.gameObject.SetActive(false);
-    SnakeT.gameObject.SetActive(false);
-    PlatT.gameObject.SetActive(false);
+    disableText();
     recentMachine = "Nope";
     }
 
@@ -41,13 +39,10 @@ public class MainCharacter : MonoBehaviour
         // Debug.Log(recentMachine);
 
         if(recentMachine != "Nope"){
-            if(Input.GetKey(KeyCode.Y)){
+            if(Input.GetKey(KeyCode.Y) || recentMachine == "Talking to Owner"){
                 SceneManager.LoadScene(recentMachine);
             }if(Input.GetKey(KeyCode.N)){
-                PongT.gameObject.SetActive(false);
-                SpaceT.gameObject.SetActive(false);
-                SnakeT.gameObject.SetActive(false);
-                PlatT.gameObject.SetActive(false);
+                disableText();
                 recentMachine = "Nope";
                 moveToEntrance();}
 
@@ -57,24 +52,32 @@ public class MainCharacter : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         switch(other.gameObject.tag){
             case "Pong":
+                disableText();
+                WordBubble.gameObject.SetActive(true);
                 PongT.gameObject.SetActive(true);
                 recentMachine = "Pong";
                 break;
             case "Space":
+                disableText();
                 SpaceT.gameObject.SetActive(true);
+                WordBubble.gameObject.SetActive(true);
                 recentMachine = "Space Invaders";
                 break;
             case "Snake":
-                Debug.Log("Yolo");
+                disableText();
                 SnakeT.gameObject.SetActive(true);
+                WordBubble.gameObject.SetActive(true);
                 recentMachine = "Snake";
                 break;
             case "Platform":
+                disableText();
                 PlatT.gameObject.SetActive(true);
+                WordBubble.gameObject.SetActive(true);
                 recentMachine = "Platformer";
                 break;
             case "OldGuy":
-                moveToEntrance();
+                disableText();
+                recentMachine = "Talking to Owner";
                 break;
         }
         // PongT.gameObject.SetActive(false);
@@ -85,6 +88,15 @@ public class MainCharacter : MonoBehaviour
     }
     void moveToEntrance(){
         transform.Translate(new Vector3(0,-3,0));
+    }
+
+    void disableText(){
+        PongT.gameObject.SetActive(false);
+        SpaceT.gameObject.SetActive(false);
+        SnakeT.gameObject.SetActive(false);
+        PlatT.gameObject.SetActive(false);
+        WordBubble.gameObject.SetActive(false);
+
     }
 
     // void YesorNo(string filename){
