@@ -24,4 +24,9 @@ public class MainCharacter : MonoBehaviour
             transform.Translate(movement);
         }
     }
+    void OnCollisionEnter2D(Collider2D other){
+        if (tag.other == "Walls"){
+            UnityEngine.Debug.Log("HIT");
+        }
+    }
 }
