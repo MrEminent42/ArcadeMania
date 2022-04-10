@@ -19,7 +19,6 @@ public class Ball : MonoBehaviour
     {
         
     }
-
     void Launch(){
         float x = Random.Range(0,2) == 0 ? -1 : 1;
         float y = Random.Range(0,2) == 0 ? -1 : 1;
@@ -31,8 +30,8 @@ public class Ball : MonoBehaviour
             rb.velocity *= 1.2f;
         }
         if(other.gameObject.tag == "Enemy Goal"){
-            //Game over
-            //Esc to leave
+            Lose();
+
         }
     }
     
