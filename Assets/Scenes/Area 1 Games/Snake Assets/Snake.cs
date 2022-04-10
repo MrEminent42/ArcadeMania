@@ -1,3 +1,5 @@
+using System.Globalization;
+// using System.Reflection.PortableExecutable;
 using System.Diagnostics;
 using UnityEngine;
 using System.Collections.Generic;
@@ -72,38 +74,53 @@ public class Snake : MonoBehaviour
                 directionMoved = Vector2.right;
             }
         } 
+        
     }
 
     void FixedUpdate()
-    {
-        for (int i = body.Count - 1; i  > 0; i--){
-            body[i].position = body[i-1].position;
-        }
+    {   
+        Vector3 oldpos = new Vector3(this.transform.position.x - directionMoved.x * 4, this.transform.position.y - directionMoved.y *4, 0);
+        UnityEngine.Debug.Log("Moving head " + this.transform.position + " to " + new Vector3(Mathf.Round(this.transform.position.x) + directionMoved.x, Mathf.Round(this.transform.position.y) + directionMoved.y, 0.0f));
         this.transform.position = new Vector3(Mathf.Round(this.transform.position.x) + directionMoved.x, Mathf.Round(this.transform.position.y) + directionMoved.y, 0.0f);
+        
+
+        for (int i = body.Count - 1; i > 0; i--) {
+            UnityEngine.Debug.Log("Moving " + body[i].name + " to " + body[i].transform.position + " to " + oldpos);
+        
+            Vector3 temp = new Vector3(body[i].transform.position.x, body[i].transform.position.y, 0f);
+            body[i].transform.position = new Vector3(oldpos.x, oldpos.y, 0);
+            oldpos = temp;
+        }
+
     }
 
     void Grow(){
         Transform bodyAddition = Instantiate(this.prefab);
-        bodyAddition.position = body[body.Count-1].position;
+        bodyAddition.name = "Snake Body " + body.Count;
+        // bodyAddition.position = body[body.Count-1].position;
+        bodyAddition.position = new Vector3(Mathf.Round(this.transform.position.x) - directionMoved.x * 4, Mathf.Round(this.transform.position.y) - directionMoved.y * 4, 0.0f);
+        UnityEngine.Debug.Log("new " + bodyAddition.position + " vs snake head " + this.transform.position);
         body.Add(bodyAddition);
     }
 
     void resetGame(){
-        for (int i = 1; i < body.Count; i ++ ){
-            Destroy(body[i].gameObject);
-        }
-        body.Clear();
-        body.Add(this.transform);
-        Start();
+        Time.timeScale = 0;
+        // for (int i = 1; i < body.Count; i ++ ){
+        //     Destroy(body[i].gameObject);
+        // }
+        // body.Clear();
+        // body.Add(this.transform);
+        // Start();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        UnityEngine.Debug.Log("Collide with " + other.tag + " at " + other.name);
+        UnityEngine.Debug.Log("Collide " + this.name + " with " + other.name);
         if (other.tag == "Food"){
-            for (int i = 0; i < 5; i++){
+            // for (int i = 0; i < 5; i++){
                 Grow();
-            }
+            // }
         } else if (other.tag == "Wall") {
+            UnityEngine.Debug.Log("Collide indented " + this.name + " with " + other.name);
             resetGame();
         }
     }
