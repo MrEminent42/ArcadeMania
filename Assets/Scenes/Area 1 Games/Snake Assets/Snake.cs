@@ -104,13 +104,12 @@ public class Snake : MonoBehaviour
     }
 
     void resetGame(){
-        Time.timeScale = 0;
-        // for (int i = 1; i < body.Count; i ++ ){
-        //     Destroy(body[i].gameObject);
-        // }
-        // body.Clear();
-        // body.Add(this.transform);
-        // Start();
+        for (int i = 1; i < body.Count; i ++ ){
+            Destroy(body[i].gameObject);
+         }
+        body.Clear();
+        body.Add(this.transform);
+        Start();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
