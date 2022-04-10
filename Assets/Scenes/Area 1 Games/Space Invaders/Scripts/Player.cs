@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
                 this.transform.position += Vector3.right * this.speed * Time.deltaTime;
             }
         }
-
-
+        
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
         }
@@ -53,6 +52,8 @@ public class Player : MonoBehaviour
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
+            // reset game 
+            // TODO - switch to game over scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
