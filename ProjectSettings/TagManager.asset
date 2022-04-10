@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Paddle
+  - Enemy Goal
+  - Player Goal
   layers:
   - Default
   - TransparentFX
