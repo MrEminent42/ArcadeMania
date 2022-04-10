@@ -17,7 +17,7 @@ public class MainCharacter : MonoBehaviour
 
     
     private string recentMachine;
-    private Vector2 speed = new Vector2(0.02f,0.02f);
+    private Vector2 speed = new Vector2(0.04f,0.04f);
     // Start is called before the first frame update
     void Start()
     {
